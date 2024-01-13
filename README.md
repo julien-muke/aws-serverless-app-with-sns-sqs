@@ -1,4 +1,4 @@
-# ![aws](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/01cd6124-8014-4baa-a5fe-bd227844d263)     Build a Serverless Application with SNS SQS and Lambda on AWS
+# ![aws](https://github.com/julien-muke/Search-Engine-Website-using-AWS/assets/110755734/01cd6124-8014-4baa-a5fe-bd227844d263)     A Serverless Application with SNS, SQS and Lambda on AWS
 
 
 ## 🤖 Introduction
@@ -13,7 +13,7 @@ In this AWS tutorial, you'll learn how to build a simple event-driven and server
 
 
 
-## ⚙️ AWS Services
+## ⚙️ AWS Services Used
 
 * Amazon Simple Notification Service (Amazon SNS)
 * Amazon Simple Queue Service (Amazon SQS)
