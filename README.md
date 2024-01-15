@@ -44,7 +44,8 @@ To create a queue:
 1. Navigate to the Amazon SQS and click on "Create queue"
 
 
-![Screenshot 2024-01-13 at 15 35 58](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/1ac098ef-21c9-47a1-9977-0897bdda6c32)
+![Screenshot 2024-01-13 at 15 35 58](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/39fb87ba-eaaa-42ab-8ad1-730d788b7d2d)
+
 
 
 2. Choose "Standard" as a queue type, name the queue `MyQueue`
