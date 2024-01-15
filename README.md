@@ -23,9 +23,14 @@ In this AWS tutorial, you'll learn how to build a simple event-driven and server
 
 ## 🔋 Features
 
+
+
 👉 Deploy a simple web application that uses a HTTP API
+
 👉 We will have some routes which will be things like `OPTION`, `GET`, `PUT` and `DELETE` for various different paths, the routes are similar to the methods that we have in the rest API
+
 👉 We'll then have a Lambda function and a dynamodb table
+
 👉 In front of all of these we'll have an Amazon S3 static website
 
 👉 We're going to connect from our machines using a web browser to the static website and it's going to have some client-side code running it's going to actually have a form in which we can enter information and submit it to the API.
