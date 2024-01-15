@@ -95,12 +95,34 @@ To create a topic:
 ![Screenshot 2024-01-13 at 16 02 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/21a224f9-9477-45e7-91a6-b1a714c74a1c)
 
 
-    * let's go to visual studio code and open the access policy, what I need to do is
-      paste it into my source ARN for my topic
+* let's go to visual studio code and open the access policy, what I need to do is
+paste it into my source ARN for my topic
       
-    * I need to go back and get the Queue ARN, let's simply copy the Queue ARN (not the URL
-      make sure it's the ARN) and back in the visual studio and paste it next to resource.
+* I need to go back and get the Queue ARN, let's simply copy the Queue ARN (not the URL
+make sure it's the ARN) and back in the visual studio and paste it next to resource.
 
+
+
+```json
+    {
+      "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+            "Service": "sns.amazonaws.com"
+        },
+        "Action": "sqs:SendMessage",
+        "Resource": "YOUR-QUEUE-ARN",
+        "Condition": {
+            "ArnEquals": {
+            "aws:SourceArn": "YOUR-ARN-TOPIC"
+        }
+      }
+    }
+  ]
+}
+
+```
 
 
 ![Screenshot 2024-01-13 at 15 48 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/6d63ef38-e2d4-41ab-be5a-92718773866d)
