@@ -194,7 +194,58 @@ To create a Lambda function:
 ![Screenshot 2024-01-13 at 16 00 03](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/52665d59-fdba-4d55-a478-db88229972e7)
 
 
+5. Lastly we're going to create the trigger in SQS:
 
+* Go to Lambda triggers, click on "Configure Lambda function trigger" 
+
+![Screenshot 2024-01-13 at 16 00 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/ab461e7d-2d87-4e08-9516-0eff1ec14c97)
+
+
+
+* Choose the Lambda function and then click on Save
+
+
+![Screenshot 2024-01-13 at 16 01 08](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/2d2f1a0e-2281-41e3-a7a6-ed74ea597854)
+
+
+
+👍  So what have we done, we've created an SNS topic and we've subscribed an SQS Queue to the topic and we made sure that the queue has permissions to allow the topic to add messages to the queue then we updated the function code and we added permissions to receive messages and delete them from the queue and of course it already has permissions to cloudwatch so when we add a message to the topic and we'll do that manually it will then push that message to the queue Lambda will then process it and write the event to cloudwatch.
+
+
+## ➡️ Step 4 - Let's Test our Topic
+
+
+1. Back on our topic click on "Publish message" 
+
+
+![Screenshot 2024-01-13 at 16 02 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/4c24a921-8518-4f8f-8d5b-48f379765089)
+
+
+
+
+2. We're going to enter a subject I just wrote `serverless app test` and then I'm going to write `VOILA, IT WORKED!!` and click on "Publish message"
+
+
+![Publish-message-demo-sns-Topics-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/d1065f61-aefc-4c75-a001-e38ad933818d)
+
+
+3. What we're going to do is go to Lambda and then go back to monitor click on view logs in cloudwatch logs 
+
+![Screenshot 2024-01-13 at 16 06 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/7250ee39-45a6-440e-a79f-98ebbabd3a1c)
+
+
+* We can see a very recent execution happened I know that this is the most recent one 
+
+
+![Screenshot 2024-01-13 at 16 07 44](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/ce874eea-cf56-4066-9adc-9c6012fc2e13)
+
+
+* If i expand each logs and we can see the information, we can see the subject and we can see the message which I added manually.
+
+
+![Screenshot 2024-01-13 at 16 09 09](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/f7f1711f-197a-4175-8bde-57c05aae5978)
+
+👍 That's it, a really simple serverless application that is event driven.
 
 ## 💰 Cost
 
