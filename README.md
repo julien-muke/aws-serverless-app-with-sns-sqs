@@ -25,26 +25,37 @@ In this AWS tutorial, you'll learn how to build a simple event-driven and server
 
 
 
-👉 Deploy a simple web application that uses a HTTP API
+👉 The user is going to submit a notification to an SNS topic
 
-👉 We will have some routes which will be things like `OPTION`, `GET`, `PUT` and `DELETE` for various different paths, the routes are similar to the methods that we have in the rest API
+👉 It's going to be integrated with a queue in other words the queue is subscribed to the topic and the message that we add to the topic ends up in the queue
 
-👉 We'll then have a Lambda function and a dynamodb table
+👉 Then SQS is going to trigger a Lambda function
 
-👉 In front of all of these we'll have an Amazon S3 static website
-
-👉 We're going to connect from our machines using a web browser to the static website and it's going to have some client-side code running it's going to actually have a form in which we can enter information and submit it to the API.
-
-The website will then talk to the public endpoint of the HTTP API and via the API it will then be integrated to the Lambda function and then the dynamodb table so the request information gets passed through to Lambda processed by Lambda and dynamodb will then store the results in a table and what this application will do is very simply just add some products to our database this could be a way for a store owner to actually add new items to their database the form that's generated will also be populated with information from the table so it will always be returned back and viewable on the form as you can see at the bottom here you can then add new items and when you submit them they get added to the table and then added to the web form as well.
-
-👉 we're going to use cloud formation for deploying the HTTP API the Lambda function and the dynamodb table so cloud formation deploys infrastructure using Code.
+👉 The Lambda function is going to run and it's going to write some information to cloudwatch and whatever we put in the topic we're going to see that in Cloud watch logs
 
 
 
-## ➡️ Step 1 - Create a basic user pool
+## ➡️ Step 1 - Create a queue
+
+We're going to use Amazon SQS by creating a queue, sending a message to the queue, and receiving and processing the message.
+
+To create a queue:
+
+1. Navigate to the Amazon SQS and click on "Create queue"
 
 
+![Screenshot 2024-01-13 at 15 35 58](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/1ac098ef-21c9-47a1-9977-0897bdda6c32)
 
+
+2. Choose "Standard" as a queue type, name the queue `MyQueue`
+
+![Create-queue-Simple-Queue-Service-us-east-1-2](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/3d092a96-c702-477a-84f0-e4f4e4c8c5e6)
+
+
+3. I'm not going to change any of parameters we're just going to leave the configuration as default, then scroll down and click "Create queue"
+
+
+![Create-queue-Simple-Queue-Service-us-east-1-3](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/fba08c7f-3ea7-4e66-bfe1-d88f27a0b3a6)
 
 
 
