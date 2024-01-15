@@ -128,9 +128,17 @@ make sure it's the ARN) and back in the visual studio and paste it next to resou
 ![Screenshot 2024-01-13 at 15 48 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/6d63ef38-e2d4-41ab-be5a-92718773866d)
 
 
+6. Copy the code and we're going to put it in as an access policy on SQS, go back to SQS console, click on "Access Policy", 
+
+![Screenshot 2024-01-13 at 16 00 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/63ba735d-6cc6-4a3e-b976-e92aa6bdf203)
 
 
 
+
+7. Then click on "Edit", you will see an example of a resource based policy, now I'm going to delete out everything that's already in there and paste in my code and then click on "Save".
+
+
+![Edit-queue-Simple-Queue-Service-us-east-1-2](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/d3c9a764-ae1b-4c0b-a4f9-ff0313183245)
 
 
 
