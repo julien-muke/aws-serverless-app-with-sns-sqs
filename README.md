@@ -59,6 +59,58 @@ To create a queue:
 ![Create-queue-Simple-Queue-Service-us-east-1-3](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/fba08c7f-3ea7-4e66-bfe1-d88f27a0b3a6)
 
 
+## ➡️ Step 2 - Create a topic
+
+
+A topic is a message channel. When you publish a message to a topic, it fans out the message to all subscribed endpoints.
+
+To create a topic:
+
+1. Navigate to the Amazon SNS console, you can go over to topics on the left hand side and click "Create topic"
+
+
+![Screenshot 2024-01-15 at 15 48 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/5bd22ed2-5f16-4eed-a336-d9f86c10e8a8)
+
+
+2. Choose "Standard" and I'll simply name `demo-sns` then sroll down, don't need to change anything else and click "Create topic"
+
+![Create-topic-Topics-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/b88d8b99-01b6-4511-adb5-d4f59aeaa5a4)
+
+
+3. There's now an option to create a subscription so let's click on "Subscription"
+
+
+![Screenshot 2024-01-13 at 15 44 29](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/baaad3fb-89f6-4595-b979-2228e8351dbf)
+
+
+4. The topic ARN is selected for us then I'm going to choose "Amazon SQS" for the protocol and select my queue as the endpoint and then click on "Create subscription"
+
+
+![Create-subscription-Subscriptions-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/b7f13dcd-5d6a-4aca-8caa-b71a4caa69d1)
+
+
+5. The SNS does need permissions to the queue so what we can do is copy the ARN of our topic:
+
+
+![Screenshot 2024-01-13 at 16 02 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/21a224f9-9477-45e7-91a6-b1a714c74a1c)
+
+
+    * let's go to visual studio code and open the access policy, what I need to do is
+      paste it into my source ARN for my topic
+      
+    * I need to go back and get the Queue ARN, let's simply copy the Queue ARN (not the URL
+      make sure it's the ARN) and back in the visual studio and paste it next to resource.
+
+
+
+![Screenshot 2024-01-13 at 15 48 48](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/6d63ef38-e2d4-41ab-be5a-92718773866d)
+
+
+
+
+
+
+
 
 
 ## 💰 Cost
