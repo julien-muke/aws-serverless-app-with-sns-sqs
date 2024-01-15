@@ -141,6 +141,59 @@ make sure it's the ARN) and back in the visual studio and paste it next to resou
 ![Edit-queue-Simple-Queue-Service-us-east-1-2](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/d3c9a764-ae1b-4c0b-a4f9-ff0313183245)
 
 
+👍 Now the SNS does have permissions to the SQS Queue.
+
+
+## ➡️ Step 3 - Create a Lambda function
+
+To create a Lambda function:
+
+1. Navigate to the Lambda console, click on "Create fonction"
+
+
+![Screenshot 2024-01-13 at 15 55 11](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/25f74187-3de7-4273-a81f-cd4e2dfa4102)
+
+
+2. Choose "Author from scratch", Enter a name for the function `MyTest`, choose runtime `Node.js 16.x` then click "Save"
+
+
+![Create-function-Lambda (3)](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/efa0378b-e104-47f8-afdb-3cdea340ba2b)
+
+
+3. Next we need to update our function code, we already have a function let's come into the function and in source code let's go to `index.js` and again we've got some code in visual studio so I've opened this file in the AWS Lambda directory SQS to Lambda copy all of the code to your clipboards and let's go and paste it in we'll simply paste it into the code editor and then deploy.
+
+
+```js
+    exports.handler = async function(event, context) {
+  event.Records.forEach(record => {
+    const { body } = record;
+    console.log(body);
+  });
+  return {};
+}
+
+```
+
+![Screenshot 2024-01-13 at 15 57 05](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/9b988d03-8484-4cd8-bee4-5af2214fbf8f)
+
+
+👍 This Lambda function code is going to pass the messages from sqs and it's going to write whatever it finds in the body of the message into Cloud watch logs.
+
+
+4. We do need to have some permissions to the queue for Lambda as well remember the function execution role is what determines the permissions that Lambda has when it executes so it must have permissions to read messages from the queue and then delete them from the queue.
+
+* Back in Lambda let's go to configuration and then choose the execution role
+
+
+![Screenshot 2024-01-13 at 15 59 00](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/35885e98-aef3-428c-9429-11564b856a6e)
+
+
+* Then I'm going to click on "ADD permissions" and attach policies let's just search for SQS the select `AWSLambdaSQSQueueExecutionRole` and what we want is the SQS execution role this does have the receive message and delete message permissions so we'll attach that policy to the role and click on "Add permissions"
+
+
+![Screenshot 2024-01-13 at 16 00 03](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/52665d59-fdba-4d55-a478-db88229972e7)
+
+
 
 
 ## 💰 Cost
