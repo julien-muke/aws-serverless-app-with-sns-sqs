@@ -77,10 +77,11 @@ To create a topic:
 ![Create-topic-Topics-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/b88d8b99-01b6-4511-adb5-d4f59aeaa5a4)
 
 
-3. There's now an option to create a subscription so let's click on "Subscription"
+3. There's now an option to create a subscription so let's click on " Create subscription"
 
 
-![Screenshot 2024-01-13 at 15 44 29](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/baaad3fb-89f6-4595-b979-2228e8351dbf)
+![Screenshot 2024-01-13 at 15 44 29](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/a883990e-4d4d-4e78-b1f1-f0313434fd81)
+
 
 
 4. The topic ARN is selected for us then I'm going to choose "Amazon SQS" for the protocol and select my queue as the endpoint and then click on "Create subscription"
