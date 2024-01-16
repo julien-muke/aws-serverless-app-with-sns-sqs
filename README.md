@@ -87,7 +87,8 @@ To create a topic:
 4. The topic ARN is selected for us then I'm going to choose "Amazon SQS" for the protocol and select my queue as the endpoint and then click on "Create subscription"
 
 
-![Create-subscription-Subscriptions-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/b7f13dcd-5d6a-4aca-8caa-b71a4caa69d1)
+![Create-subscription-Subscriptions-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/fca01b6c-abef-4338-a5a7-5db290ba3e17)
+
 
 
 5. The SNS does need permissions to the queue so what we can do is copy the ARN of our topic:
