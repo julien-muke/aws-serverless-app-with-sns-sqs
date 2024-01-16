@@ -228,7 +228,8 @@ To create a Lambda function:
 2. We're going to enter a subject I just wrote `serverless app test` and then I'm going to write `VOILA, IT WORKED!!` and click on "Publish message"
 
 
-![Publish-message-demo-sns-Topics-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/d1065f61-aefc-4c75-a001-e38ad933818d)
+![Publish-message-demo-sns-Topics-Amazon-SNS-Simple-Notification-Service-us-east-1](https://github.com/julien-muke/aws-serverless-app-with-sns-sqs/assets/110755734/42d9cd3d-d6e5-485c-b96a-e5bb62abc58c)
+
 
 
 3. What we're going to do is go to Lambda and then go back to monitor click on view logs in cloudwatch logs 
